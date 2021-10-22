@@ -11,17 +11,14 @@ const cache = setupCache({
 });
 
 const axiosInstance = axios.create({
-    baseURL: 'https://www.alphavantage.co/query',
+    baseURL: 'https://data.nasdaq.com/api/v3/datasets/WIKI',
     adapter: cache.adapter
 });
 
 export const getDailyChartForSymbol = (symbol) => {
-    return axiosInstance.get('', {
+    return axiosInstance.get(`/${symbol}/data.json`, {
         params: {
-            // Fetch daily chart
-            function: 'TIME_SERIES_DAILY',
-            symbol,
-            apikey: 'INSERT_YOUR_API_KEY_HERE'
+            api_key: 'ocd5DeyxZqbQcqLFDg2Y'
         }
     })
 };
