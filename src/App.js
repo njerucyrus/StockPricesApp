@@ -3,17 +3,21 @@ import Chart from './components/Chart';
 import CompanySymbol from './components/CompanySymbol'
 
 const App = () => {
-    const [symbol, setSymbol] = useState('')
-    const submitSybolHandler = (symbol) => {
+    const [symbol, setSymbol] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const submitSybolHandler = (symbol, startDate, endDate) => {
         setSymbol(symbol);
-        console.log(`Appjs symbol ${symbol}`)
+        setStartDate(startDate);
+        setEndDate(endDate);
+        console.log(`Appjs symbol ${symbol}, Start ${startDate}, End ${endDate}`)
 
     }
     return (
         <div style={ { display: 'flex', justifyContent: 'center' } }>
-            <div style={ { width: '70%' } }>
+            <div style={ { width: '80%' } }>
                <CompanySymbol onSubmitSymbol={submitSybolHandler}/>
-                <Chart symbol={symbol}/>
+                <Chart symbol={symbol} startDate={startDate} endDate={endDate}/>
             </div>
         </div>
     );

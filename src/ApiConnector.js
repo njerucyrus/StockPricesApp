@@ -15,10 +15,12 @@ const axiosInstance = axios.create({
     adapter: cache.adapter
 });
 
-export const getDailyChartForSymbol = (symbol) => {
+export const getDailyChartForSymbol = (symbol,start_date, end_date) => {
     return axiosInstance.get(`/${symbol}/data.json`, {
         params: {
-            api_key: 'ocd5DeyxZqbQcqLFDg2Y'
+            "api_key": 'ocd5DeyxZqbQcqLFDg2Y',
+            "start_date": start_date,
+            "end_date":  end_date
         }
     })
 };

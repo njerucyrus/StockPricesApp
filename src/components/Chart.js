@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CanvasJSChart } from "canvasjs-react-charts";
 import { getDailyChartForSymbol } from "../ApiConnector";
 
+
 const Chart = (props) => {
   const [stockData, setStockData] = useState([]);
 
@@ -10,11 +11,11 @@ const Chart = (props) => {
     console.log(`Chartjs symbole ${props.symbol}`)
      // setStockData(formatStockData(initialStockData))
     const fetchStockData = async () => {
-      const result = await getDailyChartForSymbol(props.symbol);
+      const result = await getDailyChartForSymbol(props.symbol, props.startDate,props.endDate);
       setStockData(formatStockData(result.data["dataset_data"]["data"]));
     };
     fetchStockData();
-  }, [props.symbol]);
+  }, [props.symbol,props.startDate, props.endDate]);
 
   return (
     <CanvasJSChart
