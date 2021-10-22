@@ -52,7 +52,7 @@ const CompanySymbol = (props) => {
         <label htmlFor="start_date">Start Date:</label>
         <input type="date" value={enteredStartDate} id="start_date" placeholder="Start Date" onChange={startDateChangeHandler} />
 
-        <label htmlFor="end_date">Start Date:</label>
+        <label htmlFor="end_date">End Date:</label>
         <input type="date" value={enteredEndDate} id="end_date" placeholder="End Date"  onChange={endDateChangeHandler}/>
 
         <button type="submit">Submit</button>
