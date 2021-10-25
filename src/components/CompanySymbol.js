@@ -19,7 +19,7 @@ const formatDate = (dateInput, formatStr) => {
   });
 };
 const CompanySymbol = (props) => {
-  const [enteredSymbol, setEnteredSymbol] = useState("FB");
+  const [enteredSymbol, setEnteredSymbol] = useState('');
   const [enteredStartDate, setEnteredStartDate] = useState('');
   const [enteredEndDate, setEnteredEndDate] = useState('');
 
